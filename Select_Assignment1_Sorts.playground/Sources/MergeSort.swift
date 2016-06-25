@@ -4,8 +4,8 @@ func mergeSort(list: [Int])->[Int]{
     guard list.count > 1 else {return list}
     
     let middleIndex = list.count/2
-    let leftArray = mergeSortSwift(Array(list[0..<middleIndex]))
-    let rightArray = mergeSortSwift(Array(list[middleIndex..<list.count]))
+    let leftArray = mergeSort(Array(list[0..<middleIndex]))
+    let rightArray = mergeSort(Array(list[middleIndex..<list.count]))
     
     return merge(leftPile:leftArray, rightPile: rightArray)
 }
